@@ -12,7 +12,7 @@ interface ProductsProps{
 
 
 
-export default function ProductCard({banner,title,price,dailyEarnings,days,type}:ProductsProps){
+export default function ProductCard({banner,title,price,dailyEarnings,days}:ProductsProps){
     return(
         <>
         <div className="flex flex-col gap-2 p-4 bg-white rounded-md shadow-lg">

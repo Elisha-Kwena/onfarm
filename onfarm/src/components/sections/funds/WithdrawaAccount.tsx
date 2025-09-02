@@ -1,4 +1,3 @@
-import { FoodBankSharp } from "@mui/icons-material"
 
 const banks = [
     {

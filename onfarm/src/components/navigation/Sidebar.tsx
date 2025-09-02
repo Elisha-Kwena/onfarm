@@ -19,10 +19,22 @@ interface PopupPosition {
   left: number;
 }
 
-// Define a type guard to check if an item has a link
-function hasLink(item: any): item is { link: string } {
-  return item.link !== undefined;
+interface SidebarMenuItem {
+  id:string;
+  label:string;
+  icon:React.ComponentType<{ className?: string }>;
+  link?:string;
+  submenu?: {
+    id:string;
+    label:string;
+    link:string;
+  }[]
 }
+
+// Define a type guard to check if an item has a link
+// function hasLink(item: any): item is { link: string } {
+//   return item.link !== undefined;
+// }
 
 export default function SideBar({ isOpen, onToggle }: SideBarProps) {
   const [currentYear] = useState(new Date().getFullYear())
@@ -34,6 +46,11 @@ export default function SideBar({ isOpen, onToggle }: SideBarProps) {
   const menuItemRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({})
   const pathname = usePathname()
 
+
+    // Define type guard inside the component
+  const hasLink = (item: SidebarMenuItem): item is SidebarMenuItem & { link: string } => {
+    return item.link !== undefined;
+  }
   const toggleSubmenu = (menuId: string, event: React.MouseEvent) => {
     if (isOpen) {
       // Regular behavior when sidebar is open
