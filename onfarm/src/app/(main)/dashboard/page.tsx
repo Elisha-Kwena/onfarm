@@ -11,7 +11,6 @@ import TasksTable from '@/components/sections/dashboard/TasksTable';
 
 import Navbar from '@/components/navigation/Navbar';
 import Support from '@/components/ui/DashboardCards/Support';
-import DashboardSkeleton from '@/components/sections/dashboard/DashboardSkeleton';
 
 import Loader from '@/components/ui/loaders/Loader';
 

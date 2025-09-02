@@ -50,7 +50,7 @@ export default function SubordinateCards() {
                         <span className="mb-1">Commission Rate: {data.commissionRate}%</span>
                         <span className="mb-1">Total Number: {data.totalNumber}</span>
                         <span className="mb-1">Number of Purchasers: {data.purchasers}</span>
-                        <span>Today's Commission: KSH{data.todaysCommission.toFixed(4)}</span>
+                        <span>Today&apos;s Commission: KSH{data.todaysCommission.toFixed(4)}</span>
                     </div>
                 </div>
             ))}
