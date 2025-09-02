@@ -19,6 +19,11 @@ interface PopupPosition {
   left: number;
 }
 
+// Define a type guard to check if an item has a link
+function hasLink(item: any): item is { link: string } {
+  return item.link !== undefined;
+}
+
 export default function SideBar({ isOpen, onToggle }: SideBarProps) {
   const [currentYear] = useState(new Date().getFullYear())
   const [openSubmenu, setOpenSubMenu] = useState<string | null>(null)
@@ -239,7 +244,7 @@ export default function SideBar({ isOpen, onToggle }: SideBarProps) {
                     <IconComponent className={`${isOpen ? "mr-3" : ""} ${
                       "text-gray-500"
                     }`}/>
-                    {isOpen && <span>{item.label}</span>}
+                    {isOpen && <span>{item}</span>}
                   </button>
                 )}
               </div>
