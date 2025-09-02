@@ -84,7 +84,7 @@ export default function SideBar({ isOpen, onToggle }: SideBarProps) {
       }
     });
     setHeights(newHeights);
-  }, [sideBarMenuItems, isOpen]);
+  }, [isOpen]);
 
   // Close all submenus when sidebar collapses
   useEffect(() => {
