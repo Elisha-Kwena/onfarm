@@ -11,15 +11,15 @@ export default function DepositBox() {
     117000.00,
   ];
 
-  const [selectedAmount, setSelectedAmount] = useState('');
+  const [selectedAmount, setSelectedAmount] = useState<number | ''>('');
   const [customAmount, setCustomAmount] = useState('');
 
-  const handleRadioChange = (amount) => {
+  const handleRadioChange = (amount: number) => {
     setSelectedAmount(amount);
     setCustomAmount('');
   };
 
-  const handleCustomInputChange = (event) => {
+  const handleCustomInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCustomAmount(event.target.value);
     setSelectedAmount('');
   };
