@@ -5,7 +5,7 @@ export default function ChangePasswordForm() {
     const [newPassword, setNewPassword] = useState('');
     const [reEnterNewPassword, setReEnterNewPassword] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         // Here you would add your logic to handle password change
         console.log('Old Password:', oldPassword);
